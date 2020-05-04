@@ -2,11 +2,14 @@
   import { getContext, setContext, onMount } from "svelte";
   import { writable, derived } from "svelte/store";
   import { LOCATION, ROUTER } from "./contexts.js";
-  import { globalHistory } from "./history.js";
+  import { createHistory, canUseDOM, createMemorySource } from "./history.js";
   import { pick, match, stripSlashes, combinePaths } from "./utils.js";
 
   export let basepath = "/";
   export let url = null;
+  export let globalHistory = createHistory(
+    canUseDOM ? window : createMemorySource()
+  );
 
   const locationContext = getContext(LOCATION);
   const routerContext = getContext(ROUTER);
@@ -127,4 +130,4 @@
   });
 </script>
 
-<slot></slot>
+<slot />

@@ -95,14 +95,6 @@ function createMemorySource(initialPathname = "/") {
   };
 }
 
-// Global history uses window.history as the source if available,
-// otherwise a memory history
-const canUseDOM = Boolean(
-  typeof window !== "undefined" &&
-    window.document &&
-    window.document.createElement
-);
-const globalHistory = createHistory(canUseDOM ? window : createMemorySource());
-const { navigate } = globalHistory;
 
-export { globalHistory, navigate, createHistory, createMemorySource };
+
+export { createHistory, createMemorySource };

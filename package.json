@@ -1,12 +1,12 @@
 {
-  "name": "svelte-routing",
-  "version": "1.4.2",
-  "description": "A declarative Svelte routing library with SSR support",
+  "name": "svelte-routing-in-memory",
+  "version": "1.0.0",
+  "description": "A declarative Svelte routing library with SSR support and support for in-memory routing",
   "main": "src/index.js",
   "svelte": "src/index.js",
-  "author": "Emil Tholin @EmilTholin",
+  "author": "Farzad YZ @farskid",
   "license": "MIT",
-  "repository": "EmilTholin/svelte-routing",
+  "repository": "farskid/svelte-routing",
   "peerDependencies": {
     "svelte": "3.x"
   }

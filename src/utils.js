@@ -340,4 +340,9 @@ function hostMatches(anchor) {
   )
 }
 
-export { stripSlashes, pick, match, resolve, combinePaths, shouldNavigate, hostMatches };
+const canUseDOM = () => Boolean(
+  typeof window !== "undefined" &&
+    window.document &&
+    window.document.createElement)
+
+export { stripSlashes, pick, match, resolve, combinePaths, shouldNavigate, hostMatches, canUseDOM };
