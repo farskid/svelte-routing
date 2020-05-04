@@ -17,6 +17,9 @@ function createHistory(source, options) {
   let location = getLocation(source);
 
   return {
+    get referer() {
+      return source.referer
+    },
     get location() {
       return location;
     },
@@ -65,6 +68,9 @@ function createMemorySource(initialPathname = "/") {
   const states = [];
 
   return {
+    get referer() {
+      return stack[index - 1]
+    },
     get location() {
       return stack[index];
     },
